@@ -60,3 +60,30 @@ jobs:
           skip_packaging: true
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Install Cosign
+        uses: sigstore/cosign-installer@main
+      - name: Sign the image
+        run: |
+          cosign sign --force \
+          $IMG_REPOSITORY:${{ github.ref_name }}
+        env:
+          COSIGN_EXPERIMENTAL: 1
+      - name: Verify the pushed tags
+        run: cosign verify $IMG_REPOSITORY:${{ github.ref_name }}
+        env:
+          COSIGN_EXPERIMENTAL: 1
+      - name: Attest Review file 
+        run: |
+          COSIGN_DOCKER_MEDIA_TYPES=1 cosign attest --force --predicate ${GITHUB_WORKSPACE}/review.json --type https://example.com/CodeReview/v1 $IMG_REPOSITORY:${{ github.ref_name }}
+        env:
+          COSIGN_EXPERIMENTAL: "true"
+      - name: Attest Scan file 
+        run: |
+          COSIGN_DOCKER_MEDIA_TYPES=1 cosign attest --force --predicate ${GITHUB_WORKSPACE}/scan.json --type https://trivy.aquasec.com/scan/v2 $IMG_REPOSITORY:${{ github.ref_name }}
+        env:
+          COSIGN_EXPERIMENTAL: "true"
+      - name: Attest SBOM file 
+        run: |
+          COSIGN_DOCKER_MEDIA_TYPES=1 cosign attest --force --predicate ${GITHUB_WORKSPACE}/sbom.json --type https://cyclonedx.org/BOM/v1 $IMG_REPOSITORY:${{ github.ref_name }}
+        env:
+          COSIGN_EXPERIMENTAL: "true"
