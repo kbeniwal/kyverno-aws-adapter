@@ -3,8 +3,6 @@ name: Docker build
 on:
   push:
     branches:
-      - 'main'
-      - 'release*'
   pull_request:
     branches:
       - 'main'
