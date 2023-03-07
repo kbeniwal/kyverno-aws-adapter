@@ -1,0 +1,28 @@
+name: E2e test
+
+on:
+  push:
+    branches:
+      - 'main'
+  pull-request:
+    branches:
+      - 'main'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  run-e2etest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Unshallow
+        run: git fetch --prune --unshallow
+      - name: Prepare environment
+        run: make e2e-install
+      - name: Check e2e-install
+        run: make wait-for-install
+      - name: Test with kuttl
+        run: make test-kuttl
