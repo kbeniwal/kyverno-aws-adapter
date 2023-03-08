@@ -16,10 +16,10 @@ jobs:
         with:
           path: kyverno-aws-adapter
       - name: Clone Enterprise Kyverno
-        uses: actions/checkout@v3
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
         with:
           repository: nirmata/kyverno
-          path: kverno
+          path: kyverno
           # The target branch of a pull request or the branch/tag of a push
           ref: ${{ github.base_ref || github.ref_name }}
       - name: Set up Go
