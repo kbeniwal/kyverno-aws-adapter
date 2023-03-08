@@ -3,9 +3,9 @@ name: Kyverno Test
 on:
   push:
     branches:
-  pull-request:
+  pull_request:
     branches:
-      - main
+      - 'main'
 
 jobs:
   test:
