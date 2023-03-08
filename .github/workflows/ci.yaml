@@ -1,0 +1,31 @@
+name: Kyverno Test
+
+on:
+  push:
+    branches:
+  pull-request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          path: kyverno-aws-adapter
+      - name: Clone Enterprise Kyverno
+        uses: actions/checkout@v3
+        with:
+          repository: nirmata/kyverno
+          path: kverno
+          # The target branch of a pull request or the branch/tag of a push
+          ref: ${{ github.base_ref || github.ref_name }}
+      - name: Set up Go
+        uses: actions/checkout@v3
+        with:
+          go-version: 1.18
+      - name: Run Kyverno CLI tests
+        run: go run ./cmd/cli/kubectl-kyverno test ../kyverno-aws-adapter
+        working-directory: kyverno

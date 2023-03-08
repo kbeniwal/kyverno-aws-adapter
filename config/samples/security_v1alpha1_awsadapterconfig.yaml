@@ -11,3 +11,77 @@ metadata:
 spec:
   name: test
   region: us-west-1
+status:
+  accountData:
+    id: "844333597536"
+    inspectorEnabledEC2: true
+    inspectorEnabledECR: true
+  eksCluster:
+    addons:
+    - coredns
+    - kube-proxy
+    - vpc-cni
+    arn: arn:aws:eks:us-west-1:844333597536:cluster/kushal-aws-adapter
+    certificate: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUMvakNDQWVhZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJek1ETXdOekExTVRJeE5Wb1hEVE16TURNd05EQTFNVEl4TlZvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBUFpwCnJ6UlhVVDZnM09xd0VKS3ZNSGZkMVN3NjV1V0lhTnUyc2YxUjlWVXpNUk5XZGpvK0N5b09EbDJNbCtKSTdqdEYKZWVYMUxFKyttV3FlVFFDbmFPbEI1V3g5SmUzZmQwR3FTMVlNVXJaK3hyMVNEQ0UzZDhPdUdacEU5dVB6S09xWApZRkYyMXluTXlnbHdOSjNWbzhNYnJNOHhjbmkwTTVVL2NQTVY1djV5cnd3ZWM0Yk5TS1JuMzZyVVl4UG5Tb2ZWCkl0TmJFcG9lcElrV1pkSTE2N29rSlZYWVhRMTlUUTZaRzdLamkyaUFHYk1FK2ZaWDJwTFFTMWVGTGFseGtlVWkKVmxiNmR3dXJDWnIyOEw1NjBwL3VUTlh5K3dUTmRBNXZsNGhGRy9WN1VnQ0ZmSVBrUlBOYnFvaFdkSDhTNEFDegpTTzUzb0ViTkZRS1JhY2xqc0tjQ0F3RUFBYU5aTUZjd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZGMFhIc25UQXYrSEt6WmlwVmhiVk5VdW5kbUpNQlVHQTFVZEVRUU8KTUF5Q0NtdDFZbVZ5Ym1WMFpYTXdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBQnJHei9naCtxbDMwckNJQnZwbQp4cW5DQmRjc0UyUGNuRW12dXdLSDg0cHBFYVUxZjFVazBtM2dGejZvYWN1YXRFVVdNVlBYLzBscFRacFRmUytSCnZqeVRnNW1MbEttelJ1MVZ1NHBXUnUrQXhtcUpKS3M4LzBwa2xzT3J0S0Fwb1gwOER2M21EMnlqNkQ2WjJGOG0KU2FWMG1uNkJLeUdzd0Naekl5Z2c3TXI3U24wNVNNcTdUYlFBSnlHaExoQktDbGIyeVlMYkhjdjNYUGJQNzRmTgpNdGI3WVZmODRwOFhhSFk4ejVuODNrTXplQ2NIWDVpZ1lpU2t6bmZkSFVXVDI1ZDdycXlsMTRHaXJyRjYvdkk3Cnd3YzB5bG1UU0RMR2I2Y3BQNjBmYkZGSFV4ZHlkSDl6T2QvT3pMQlMrenFpbDBwMk1SMXh6dUsrM1pCZDZ0R2UKMEJNPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    compute:
+      nodeGroups:
+      - amiReleaseVersion: 1.24.10-20230217
+        amiType: AL2_x86_64
+        capacityType: ON_DEMAND
+        createdAt: 2023-03-07 05:25:07.757 +0000 UTC
+        diskSize: 6
+        instanceTypes:
+        - t3.micro
+        name: kushal-aws-adapter-node-group
+        nodeGroupArn: arn:aws:eks:us-west-1:844333597536:nodegroup/kushal-aws-adapter/kushal-aws-adapter-node-group/c0c35d43-e41b-63e0-d795-2b62e5f68c45
+        nodeRole: arn:aws:iam::844333597536:role/viv-worker-node-policy
+        resources:
+          autoScalingGroups:
+          - eks-kushal-aws-adapter-node-group-c0c35d43-e41b-63e0-d795-2b62e5f68c45
+        scalingConfig:
+          desiredSize: 2
+          maxSize: 2
+          minSize: 2
+        status: ACTIVE
+        subnets:
+        - subnet-24778d42
+        - subnet-3ee0f665
+        updateConfig:
+          maxUnavailable: 1
+      reservations:
+      - instances:
+        - httpPutResponseHopLimit: 2
+          publicDnsName: ec2-54-219-201-33.us-west-1.compute.amazonaws.com
+    createdAt: 2023-03-07 05:06:08.439 +0000 UTC
+    endpoint: https://94C71FD57BAEA8CC8FB2E180D398879B.gr7.us-west-1.eks.amazonaws.com
+    kubernetesVersion: "1.24"
+    logging:
+      apiServer: false
+      audit: true
+      authenticator: false
+      controllerManager: false
+      scheduler: false
+    name: kushal-aws-adapter
+    networking:
+      ipFamily: ipv4
+      serviceIPv4CIDR: 10.100.0.0/16
+      vpc:
+        clusterSecurityGroupID: sg-060c4c41cb13c5a1d
+        endpointPublicAccess: false
+        flowLogsEnabled: true
+        publicAccessCIDRs:
+        - 0.0.0.0/0
+        subnetIDs:
+        - subnet-24778d42
+        - subnet-3ee0f665
+        vpcID: vpc-1ef6fd79
+    platformVersion: eks.4
+    region: us-west-1
+    roleArn: arn:aws:iam::844333597536:role/standard-eks-role
+    status: ACTIVE
+    tags:
+      alpha.eksctl.io/cluster-oidc-enabled: "true"
+  lastPollInfo:
+    status: success
+    timestamp: "2023-03-07T16:13:33Z"
+  lastUpdatedTimestamp: "2023-03-07T16:13:33Z"
