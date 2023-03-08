@@ -147,6 +147,7 @@ You can check the status of your configuration with:
     kubectl get awsacfg -n nirmata-aws-adapter kyverno-aws-adapter -o yaml
 ```
 
+
 ### Verifying the AWS Adapter installation
 
 Perform the below steps to see if the adapter is installed correctly.
