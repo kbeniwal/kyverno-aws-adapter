@@ -63,8 +63,8 @@ test: manifests generate fmt vet envtest ## Run tests.
 .PHONY: kyverno-cli-tests
 kyverno-cli-tests: ## Run Kyverno CLI tests.
 	pwd
-	cd kyverno
-	go run kyverno/cmd/cli/kubectl-kyverno test ../tests
+	cd ../kyverno
+	go run ./cmd/cli/kubectl-kyverno test ../kyverno-aws-adapter
 
 ##@ Build
 

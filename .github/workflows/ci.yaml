@@ -28,3 +28,4 @@ jobs:
         run: cd .. && tree -L 3
       - name: Run Kyverno CLI tests
         run: make kyverno-cli-tests
+        working-directory: kyverno-aws-adapter
