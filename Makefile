@@ -58,6 +58,12 @@ vet: ## Run go vet against code.
 test: manifests generate fmt vet envtest ## Run tests.
 	KUBEBUILDER_ASSETS="$(shell $(ENVTEST) use $(ENVTEST_K8S_VERSION) --bin-dir $(LOCALBIN) -p path)" go test ./... -coverprofile cover.out
 
+##@ Test
+
+.PHONY: kyverno-cli-tests
+kyverno-cli-tests: ## Run Kyverno CLI tests.
+	go run ./cmd/cli/kubectl-kyverno test ../kyverno-aws-adapter
+
 ##@ Build
 
 .PHONY: build
