@@ -23,6 +23,6 @@ jobs:
         with:
           go-version: 1.18
       - name: Where am I?
-        run: pwd
+        run: cd .. && tree -L 3
       - name: Run Kyverno CLI tests
         run: make kyverno-cli-tests
