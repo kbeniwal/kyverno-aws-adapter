@@ -25,6 +25,6 @@ jobs:
         with:
           go-version: 1.18
       - name: Where am I?
-        run: echo pwd
+        run: pwd
       - name: Run Kyverno CLI tests
         run: make kyverno-cli-tests
