@@ -27,7 +27,5 @@ jobs:
       - name: Where am I?
         run: cd .. && tree -L 3
       - name: Run Kyverno CLI tests
-        run: |
-          cd ../kyverno
-	        go run ./cmd/cli/kubectl-kyverno test ../kyverno-aws-adapter
+        run: cd ../kyverno && go run ./cmd/cli/kubectl-kyverno test ../kyverno-aws-adapter
         working-directory: kyverno-aws-adapter
