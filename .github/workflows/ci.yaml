@@ -20,8 +20,6 @@ jobs:
         with:
           repository: nirmata/kyverno
           path: kyverno
-          # The target branch of a pull request or the branch/tag of a push
-          # ref: ${{ github.base_ref || github.ref_name }}
       - name: Set up Go
         uses: actions/setup-go@v3
         with:
