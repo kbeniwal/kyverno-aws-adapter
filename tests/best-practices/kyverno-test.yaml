@@ -94,7 +94,7 @@ results:
     rule: check-instance-profile-access
     resource: bad-awsacfg
     result: fail
-  #   kind: AWSAdapterConfig
+    kind: AWSAdapterConfig
   # - policy: check-public-dns
   #   rule: check-public-dns
   #   resource: good-awsacfg
