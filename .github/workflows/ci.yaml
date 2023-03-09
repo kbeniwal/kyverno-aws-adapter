@@ -16,7 +16,7 @@ jobs:
         with:
           path: kyverno-aws-adapter
       - name: Clone Enterprise Kyverno
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
+        uses: actions/checkout@v3
         with:
           repository: nirmata/kyverno
           path: kyverno
@@ -24,8 +24,6 @@ jobs:
         uses: actions/setup-go@v3
         with:
           go-version: 1.18
-      - name: Where am I?
-        run: cd .. && tree -L 3
       - name: Run Kyverno CLI tests
-        run: cd ../kyverno && go run ./cmd/cli/kubectl-kyverno test ../kyverno-aws-adapter
-        working-directory: kyverno-aws-adapter
+        run: go run ./cmd/cli/kubectl-kyverno test ../kyverno-aws-adapter
+        working-directory: kyverno
