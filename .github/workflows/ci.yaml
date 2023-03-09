@@ -26,5 +26,5 @@ jobs:
           go-version: 1.18
       - name: Run Kyverno CLI tests
         # run: make kyverno-cli-tests
-        run: go run ./cmd/cli/kubectl-kyverno test ../kyverno-aws-adapter -v 2
+        run: go run ./cmd/cli/kubectl-kyverno test ../kyverno-aws-adapter -v 6
         working-directory: kyverno
