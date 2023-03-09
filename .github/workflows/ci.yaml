@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
         with:
           repository: nirmata/kyverno
-          path: ../kyverno
+          path: kyverno
       - name: Set up Go
         uses: actions/setup-go@v3
         with:
