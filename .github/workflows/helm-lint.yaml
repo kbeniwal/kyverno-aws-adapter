@@ -3,8 +3,6 @@ name: Helm lint
 on:
   push:
     branches:
-      - 'main'
-      - 'release*'
   pull_request:
     branches:
       - 'main'
@@ -27,6 +25,8 @@ jobs:
           python-version: 3.7
       - name: Set up chart-testing
         uses: helm/chart-testing-action@v2
+      - name: Where am I?
+        run: pwd
       - name: Check docs are up to date
         run: make verify-helm-docs
       - name: Run chart-testing (lint)
