@@ -26,4 +26,3 @@ jobs:
           go-version: 1.18
       - name: Run Kyverno CLI tests
         run: make kyverno-cli-tests
-        working-directory: kyverno
