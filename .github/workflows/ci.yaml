@@ -27,5 +27,5 @@ jobs:
       - name: Where am I?
         run: pwd
       - name: Run Kyverno CLI tests
-        run: ../kyverno-aws-adapter/make kyverno-cli-tests
-        working-directory: kyverno
+        run: make kyverno-cli-tests
+        working-directory: kyverno-aws-adapter
