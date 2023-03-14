@@ -9,6 +9,10 @@ on:
 
 jobs:
   cli-test:
+    strategy:
+      fail-fast: false
+      matrix:
+        n4k-version: [v1.9.0-n4kbuild.3]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
