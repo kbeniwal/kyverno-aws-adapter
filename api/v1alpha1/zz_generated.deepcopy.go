@@ -574,10 +574,12 @@ func (in *EKSNodeGroup) DeepCopyInto(out *EKSNodeGroup) {
 		*out = make([]string, len(*in))
 		copy(*out, *in)
 	}
-	if in.InstanceTypes != nil {
-		in, out := &in.InstanceTypes, &out.InstanceTypes
-		*out = make([]string, len(*in))
-		copy(*out, *in)
+	if in.AmazonMachineImages != nil {
+		in, out := &in.AmazonMachineImages, &out.AmazonMachineImages
+		*out = make([]AmazonMachineImage, len(*in))
+		for i := range *in {
+			(*in)[i].DeepCopyInto(&(*out)[i])
+		}
 	}
 	if in.UpdateConfig != nil {
 		in, out := &in.UpdateConfig, &out.UpdateConfig
